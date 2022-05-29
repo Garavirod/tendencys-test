@@ -49,14 +49,13 @@ export default {
     return {
       search: "",
       dataTable: [],
-      rfcProveedorToDelete: null,
+
       dialogEliminar: false,
     };
   },
   methods: {
     /* Vuex */
     ...mapMutations("shared", ["setOverlayState"]),
-    ...mapActions("admin", ["eliminaProveedorAction"]),
     /* Local */
     goToDetalleView: function (orden) {      
       const ordenItem = {

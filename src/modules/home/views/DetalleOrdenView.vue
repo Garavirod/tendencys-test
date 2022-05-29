@@ -18,8 +18,10 @@
                 outlined
                 rounded
                 small
-                color="green"                
+                color="green"
+                @click="showAlertaPago = true"                
               >
+                
                 Realizar pago
                 <v-icon right> mdi-cart </v-icon>
               </v-btn>
@@ -32,15 +34,47 @@
         </v-card-text>
        </v-card>
     </v-sheet>
+    <!-- Alerta de pago -->
+    <div class="text-center">
+    <v-dialog
+      v-model="showAlertaPago"
+      width="500"
+    >     
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">
+          Realizar pago
+        </v-card-title>
+
+        <v-card-text>
+          ¿Estás segur@ que desar realizar el pago de los productos de la orden N° - {{datosOrden.numero_orden}} ?
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="hacerPago()"
+          >
+            Aceptar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
   </v-container>
 </template>
 <script>
+import { mapActions } from 'vuex';
 import TablaProductosComponent from '../components/TablaProductosComponent.vue';
 export default {
   name: "TablaPagosView",
   components: {TablaProductosComponent},
   data() {
     return {
+      showAlertaPago: false,
       datosOrden: null,
        headers: [
         { text: 'Sku',value: 'sku',},
@@ -51,12 +85,19 @@ export default {
     };
   },
   methods: {
+    /* Vuex */
+    ...mapActions('Home',['realizarPagoAction']),
+    /* Local */
     init: async function () {
       this.datosOrden = this.$route.params.dataOrden;
       if (!this.datosOrden) {
         this.$router.go(-1);
       }
     },
+    hacerPago: async function(){
+      this.showAlertaPago = false;
+      await this.realizarPagoAction(this.datosOrden);
+    }
   },
   created() {
     this.init();

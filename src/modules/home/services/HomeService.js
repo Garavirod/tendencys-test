@@ -18,6 +18,17 @@ class HomeService extends Service{
         return createAPIConnection.get(`/orders`)        
     }
 
+    /**
+     * Simula una conexión con la API para realizar el pago de una orden
+     * @param {*} datosOrden 
+     * @returns {Promise}
+     */
+    realizarOrdenPago(datosOrden){
+        console.log("Realizando pago...", datosOrden);
+        /* Simulando peticon asíncrona de pago */
+        return new Promise((resolve) => setTimeout(resolve, 3000));
+    }
+
     
 }
 

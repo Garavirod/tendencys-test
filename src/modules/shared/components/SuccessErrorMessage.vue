@@ -4,7 +4,7 @@
   alerta de error o exito al finalizarse un proceso.
 -->
 <template>
-  <v-bottom-sheet v-model="alertActive" inset>
+  <v-bottom-sheet persistent v-model="alertActive" inset>
     <v-sheet class="text-center" height="200px">
       <v-btn class="mt-6" text color="error" @click="setActiveSheetAlert()">
         cerrar

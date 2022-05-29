@@ -18,7 +18,7 @@
                 outlined
                 rounded
                 small
-                color="green"
+                color="orange"
                 @click="showAlertaPago = true"                
               >
                 
@@ -60,6 +60,13 @@
           >
             Aceptar
           </v-btn>
+          <v-btn
+            color="red"
+            text
+            @click="showAlertaPago = false"
+          >
+            Cancelar
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -81,6 +88,7 @@ export default {
         { text: 'Nombre', value: 'name' },
         { text: 'Cantidad', value: 'quantity' },
         { text: 'Precio', value: 'price' },
+        { text: 'Actions', value: 'actions', sortable: false },
       ],
     };
   },

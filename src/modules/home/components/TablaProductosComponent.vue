@@ -12,12 +12,12 @@
         <v-spacer></v-spacer>
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
+            <v-btn rounded color="green" dark class="mb-2" v-bind="attrs" v-on="on">
               Agregar producto
             </v-btn>
           </template>
           <v-card>
-            <v-card-title>
+            <v-card-title class="text-h5 grey lighten-2">
               <span class="text-h5">{{ formTitle }}</span>
             </v-card-title>
 

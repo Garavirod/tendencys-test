@@ -35,7 +35,7 @@ export const realizarPagoAction = async ({ commit }, datosPago) => {
     // Muestra el componente overlay del sistema     
     commit(
       'Shared/setOverlayState',
-      { text: "Realizando pago...", visible: true },
+      { text: "Realizando pago, espere...", visible: true },
       { root: true }
     )
     // Proceso de pago

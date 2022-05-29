@@ -20,10 +20,10 @@
     >
       <!-- Ver detalle -->
       <template v-slot:[`item.detalle`]="{ item }">
-        <v-tooltip right color="blue">
+        <v-tooltip right color="purple">
           <template v-slot:activator="{ on, attrs }">
             <v-btn
-              color="blue"
+              color="purple"
               small
               class="ml-3 white--text"
               @click="goToDetalleView(item)"

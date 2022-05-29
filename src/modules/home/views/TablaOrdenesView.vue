@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!-- Progress data -->
-    <progress-component v-if="loading" color="blue" :size="50" />
+    <progress-component v-if="loading" :color="'#ffff'" :size="50" />
     <!-- Ordenes cargadas -->
     <v-card v-else :elevation="10">
       <v-card-title> Lista de órdenes </v-card-title>

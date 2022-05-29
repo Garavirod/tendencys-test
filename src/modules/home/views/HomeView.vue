@@ -1,37 +1,18 @@
 <template>
-  <v-app>
+  <v-app class="custom-bg">
     <v-app-bar app color="secondary" dark>
       <div class="d-flex align-center">
-        <!-- <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon> -->
-        <v-toolbar-title>Tendencys</v-toolbar-title>
+        <v-app-bar-nav-icon @click="showNavigator = !showNavigator"></v-app-bar-nav-icon>
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="https://www.tendencys.com/assets/images/logo.jpg"
           transition="scale-transition"
-          width="40"
-        />
-        <!-- <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
-        /> -->
+        />
+        <v-toolbar-title>Sistema de órdenes</v-toolbar-title>
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer 
@@ -62,15 +43,17 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
-
-      <template v-slot:append>
+      </v-list>  
+      <!-- Cerrar sesión --> 
+       <template v-slot:append>
         <div class="pa-2">
-          <v-btn @click="showNavigator = false" color="red" block>
-            <v-icon>mdi-arrow-collapse</v-icon>
+          <v-btn  color="red" block>
+            Logout
+            <v-icon>mdi-open-in-new</v-icon>
           </v-btn>
         </div>
-      </template>
+       
+      </template>  
     </v-navigation-drawer>
     <v-main>
       <v-container fill-height fluid>
@@ -102,3 +85,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.custom-bg {
+    background:linear-gradient(to right top, #051937, #133660, #1d578d, #1f7bbb, #12a1eb);
+}
+</style>

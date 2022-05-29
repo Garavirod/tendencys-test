@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <v-app >
     <!-- Overlay  loadding -->
     <overlay-component />
     <router-view />
     <!-- Mensajes de exito o error al usuario -->
     <success-error-message />
-  </div>
+  </v-app>
 </template>
+
+
 
 <script>
 import OverlayComponent from './modules/shared/components/OverlayComponent.vue';

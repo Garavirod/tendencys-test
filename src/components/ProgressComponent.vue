@@ -1,3 +1,8 @@
+<!-- 
+  Este componente es un progress de carga que se accede
+  desde cualquier modulo y sireve para mostrar al suaurio
+  mientras existen datos que están siendo cargados.
+-->
 <template>
     <div class="text-center mt-6">
         <v-progress-circular

@@ -1,3 +1,8 @@
+<!-- 
+  Este componente es un modal que se accede
+  desde cualquier modulo y sireve para mostrar al usuario que una
+  alerta de error o exito al finalizarse un proceso.
+-->
 <template>
   <v-bottom-sheet v-model="alertActive" inset>
     <v-sheet class="text-center" height="200px">

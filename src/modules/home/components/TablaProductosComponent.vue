@@ -18,7 +18,7 @@
           </template>
           <v-card>
             <v-card-title class="text-h5 grey lighten-2">
-              <span class="text-h5">{{ formTitle }}</span>
+              <span class="text-h5">{{ tituloformulario }}</span>
             </v-card-title>
 
             <v-card-text>
@@ -69,7 +69,7 @@
               <v-btn color="red" text @click="close">
                 Cancelar
               </v-btn>
-              <v-btn :disabled="validaformulario()" color="blue darken-1" text @click="save"> Guardar </v-btn>
+              <v-btn :disabled="validaformulario()" color="blue darken-1" text @click="guardaNuevoProducto"> Guardar </v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -117,17 +117,18 @@ export default {
     },
     defaultItem: {
       name: "",
-      quantity: 0,
+      quantity: 1,
       sku: 0,
       price: 0,
     },
+    /* Reglas para validar formulario */
     rules: {
       required: (value) => !!value || "Campo requerido.",
     },
   }),
 
   computed: {
-    formTitle() {
+    tituloformulario() {
       return this.editedIndex === -1 ? "Nuevo producto" : "Editar producto";
     },
 
@@ -143,6 +144,7 @@ export default {
   },
 
   mounted() {
+    // Asigan los datos del prop 'data'
     this.dataTable = this.data;
   },
 
@@ -186,7 +188,7 @@ export default {
       });
     },
 
-    save() {
+    guardaNuevoProducto() {
       if (this.editedIndex > -1) {
         Object.assign(this.dataTable[this.editedIndex], this.editedItem);
       } else {

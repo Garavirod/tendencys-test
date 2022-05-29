@@ -1,5 +1,4 @@
 export default {
-    name:'home',
     component: () => import(/* webpackChunkName: "HomeView" */ '@/modules/home/views/HomeView.vue'),
     children:[
         {

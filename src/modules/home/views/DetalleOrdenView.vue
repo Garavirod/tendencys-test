@@ -8,7 +8,7 @@
               Número de orden: {{ datosOrden.numero_orden }}
             </v-list-item-title>
           </v-list-item-content>         
-          <v-list-item-avatar tile size="70" color="grey">
+          <v-list-item-avatar tile size="70">
             <img alt="Imagen orden" :src="require('@/assets/home/order.png')" />
           </v-list-item-avatar>
         </v-list-item>
@@ -97,13 +97,16 @@ export default {
     ...mapActions('Home',['realizarPagoAction']),
     /* Local */
     init: async function () {
+      // Se verifica que los datos de la orden existan cargados, como 
+      // parametros en la ruta, 
       this.datosOrden = this.$route.params.dataOrden;
       if (!this.datosOrden) {
+        // al recargar la pagina reedirige a la vista anterior.
         this.$router.go(-1);
       }
     },
     hacerPago: async function(){
-      this.showAlertaPago = false;
+      this.showAlertaPago = false; // cierra modal de confirmación
       await this.realizarPagoAction(this.datosOrden);
     }
   },

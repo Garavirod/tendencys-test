@@ -20,5 +20,14 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Características del proyecto
+- El proyecto esta desarrollado en Vue 2
+- Se utilizó axios para las peticones HTTP en su version 0.25.0
+- Para los componentes visuales se utilizó Vuetify
+- El proyecto trabaja con Vuex segmentado en módulos
+- Se utilizó el CDN Animate css para animaciones en componentes
+- Se tomaron íconos de la platafroma Flaticon
+
+### License
+
+MIT

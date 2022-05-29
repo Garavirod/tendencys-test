@@ -12,7 +12,7 @@
         <v-spacer></v-spacer>
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn rounded color="green" dark class="mb-2" v-bind="attrs" v-on="on">
+            <v-btn small outlined rounded color="green" dark class="mb-2" v-bind="attrs" v-on="on">
               Agregar producto
             </v-btn>
           </template>
@@ -66,7 +66,7 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="close">
+              <v-btn color="red" text @click="close">
                 Cancelar
               </v-btn>
               <v-btn :disabled="validaformulario()" color="blue darken-1" text @click="save"> Guardar </v-btn>
@@ -78,10 +78,10 @@
             <v-card-title class="text-h5 grey lighten-2"
               >Eliminar producto</v-card-title
             >
-            <v-card-text>¿Segur@ que desae eliminar este producto?</v-card-text>
+            <v-card-text>¿Segur@ que deseas eliminar este producto?</v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="closeDelete"
+              <v-btn color="red" text @click="closeDelete"
                 >Cancelar</v-btn
               >
               <v-btn color="blue darken-1" text @click="eliminaProductoConfirm"

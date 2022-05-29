@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="datosOrden">
+  <v-container v-if="datosOrden" class="animate__animated animate__fadeIn">
     <v-sheet color="white pa-3" elevation="16" class="justify-center">
       <v-card elevation="3" class="mx-auto" outlined>
         <v-list-item three-line>

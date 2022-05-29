@@ -3,7 +3,7 @@
     <!-- Progress data -->
     <progress-component v-if="loading" :color="'#ffff'" :size="50" />
     <!-- Ordenes cargadas -->
-    <v-card v-else :elevation="10">
+    <v-card v-else :elevation="10" class="animate__animated animate__fadeIn">
       <v-card-title> Lista de órdenes </v-card-title>
       <v-card-text
         >En la tabla de abajo se muestra un listado de las órdenes que se han

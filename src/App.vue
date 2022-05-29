@@ -1,32 +1,25 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <!-- Overlay  loadding -->
+    <overlay-component />
+    <router-view />
+    <!-- Mensajes de exito o error al usuario -->
+    <success-error-message />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import OverlayComponent from './modules/shared/components/OverlayComponent.vue';
+import SuccessErrorMessage from './modules/shared/components/SuccessErrorMessage.vue';
+export default {
+  name: "App",
+  components:{
+    SuccessErrorMessage,
+    OverlayComponent
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  },
+  data: () => ({
+    //
+  }),
+};
+</script>
